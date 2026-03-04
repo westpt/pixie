@@ -1,0 +1,146 @@
+# Python虚拟环境
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 数据库文件
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# 日志文件
+logs/*.log
+
+# IDE配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 测试覆盖率
+.coverage
+htmlcov/
+
+# 配置文件（包含敏感信息）
+config/agent_config.yaml
+config/*_config.yaml
+!config/template.yaml
+!config/*.template.yaml
+
+# Python
+*.egg-info
+.coverage
+.eggs
+.hypothesis
+.installed.cfg
+.ipynb_checkpoints
+.mypy_cache
+.pyre
+.pytest_cache
+.pytype
+.ruff_cache
+.tox
+MANIFEST
+__pycache__
+develop-eggs
+downloads
+eggs
+htmlcov
+lib
+lib64
+parts
+pip-wheel-metadata
+sdist
+share
+var
+wheels
+.venv
+ENV
+env
+venv
+virtualenv
+
+# Rust
+Cargo.lock
+target
+
+# Go
+bin
+coverage.out
+vendor
+
+# Node.js
+.next
+.npm
+.nuxt
+.pnpm
+.turbo
+.yarn
+build
+coverage
+dist
+node_modules
+out
+
+# Java
+*.class
+.gradle
+build
+out
+target
+
+# C/C++
+*.a
+*.dll
+*.dylib
+*.exe
+*.o
+*.obj
+*.pdb
+*.so
+bin
+build
+cmake-build-*
+obj
+out
+
+# .NET
+bin
+obj
+packages
+
+# Build artifacts
+bin
+build
+cmake-build-*
+dist
+obj
+out
+target
+
+# Dependencies
+dependencies
+deps
+external
+libraries
+libs
+node_modules
+packages
+third_party
+vendor
+
+# IDE & Editors
+.DS_Store
+.idea
+.vscode
+Thumbs.db
+playground
+sandbox
+
+# Jarvis
+.jarvis

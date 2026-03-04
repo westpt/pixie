@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Framework</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <h1>🤖 AI Agent Framework</h1>
+            <p class="subtitle">轻量级单Agent框架</p>
+        </header>
+
+        <!-- 导航标签 -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="chat">💬 对话</button>
+            <button class="tab" data-tab="history">📋 任务历史</button>
+            <button class="tab" data-tab="agent">🤖 Agent状态</button>
+            <button class="tab" data-tab="stats">📊 统计</button>
+        </nav>
+
+        <!-- 对话标签 -->
+        <div id="tab-chat" class="tab-content active">
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="system-message">
+                        <p>欢迎使用AI Agent Framework！请输入您的问题开始对话。</p>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <textarea id="user-input" placeholder="输入您的问题..." rows="4"></textarea>
+                    <button id="send-btn" class="btn btn-primary">发送</button>
+                    <button id="clear-btn" class="btn btn-secondary">清空对话</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 任务历史标签 -->
+        <div id="tab-history" class="tab-content">
+            <div class="toolbar">
+                <select id="filter-status" class="filter">
+                    <option value="">全部状态</option>
+                    <option value="completed">已完成</option>
+                    <option value="pending">待处理</option>
+                    <option value="failed">失败</option>
+                </select>
+                <button id="refresh-history" class="btn btn-secondary">刷新</button>
+            </div>
+            <div id="tasks-list" class="tasks-list">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+
+        <!-- Agent状态标签 -->
+        <div id="tab-agent" class="tab-content">
+            <div id="agent-status" class="agent-status">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+
+        <!-- 统计标签 -->
+        <div id="tab-stats" class="tab-content">
+            <div id="stats-panel" class="stats-panel">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载遮罩 -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>处理中...</p>
+    </div>
+
+    <!-- 提示框 -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
+

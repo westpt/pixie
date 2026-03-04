@@ -1,0 +1,22 @@
+# Agent配置模板
+# 复制此文件并修改为您的Agent配置
+
+# Agent基本信息
+agent:
+  name: "My Agent"              # Agent名称
+  type: "base"                    # Agent类型（base、qa_assistant等）
+
+# 大模型（LLM）配置
+llm:
+  provider: "openai"               # LLM提供商（openai、qwen）
+  api_key: "your-api-key-here"   # API Key
+  api_endpoint: "https://api.openai.com/v1/chat/completions"  # API端点
+  model: "gpt-3.5-turbo"        # 模型名称
+  timeout: 30                     # 请求超时时间（秒）
+  max_retries: 3                   # 最大重试次数
+
+# 日志配置
+logging:
+  level: "INFO"                  # 日志级别（DEBUG、INFO、WARNING、ERROR）
+  file: "logs/agent.log"        # 日志文件路径
+
