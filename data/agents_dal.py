@@ -33,7 +33,7 @@ class AgentsDAL(BaseDAL):
         now = datetime.now().isoformat()
         
         try:
-            agent_id = self.execute_update(query, (name, agent_type, config_json, status, now))
+            agent_id = self.execute_update(query, (name, agent_type, config_json, status, now, now))
             logger.info(f"创建Agent成功：ID={agent_id}, name={name}, type={agent_type}")
             return agent_id
         except Exception as e:

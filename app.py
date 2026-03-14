@@ -27,7 +27,7 @@ result_dal = None
 current_agent = None
 
 # 数据库路径
-DB_PATH = project_root / "data" / "agent.db"
+DB_PATH = project_root / "data" / "data" / "agent.db"
 
 def init_dal():
     """初始化数据访问层"""
@@ -59,12 +59,15 @@ def load_agent():
         current_agent = QAAssistant(config)
         
         # 保存Agent信息到数据库
-        agent_id = agent_dal.create_agent(
+        db_agent_id = agent_dal.create_agent(
             name=config.get('agent', {}).get('name', 'QA助手'),
             agent_type='qa_assistant',
             config=config,
             status='running'
         )
+        
+        # 将数据库ID保存到Agent对象（用于任务关联）
+        current_agent.agent_id = db_agent_id
         
         print(f"Agent加载成功：{current_agent.name}")
         return True
