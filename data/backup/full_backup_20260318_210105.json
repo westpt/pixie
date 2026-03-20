@@ -1,0 +1,12 @@
+{
+  "backup_time": "2026-03-18T21:01:05.936436",
+  "tables": {
+    "agent_roles": [],
+    "agents": [],
+    "config_history": [],
+    "results": [],
+    "roles": [],
+    "sqlite_sequence": [],
+    "tasks": []
+  }
+}

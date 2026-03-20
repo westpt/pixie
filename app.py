@@ -17,8 +17,8 @@ from data import AgentsDAL, TasksDAL, ResultsDAL
 from agent_core import QAAssistant
 from data.dal import BaseDAL
 
-# 创建Flask应用
-app = Flask(__name__)
+# 创建Flask应用，指定模板目录和静态文件目录
+app = Flask(__name__, template_folder='web/templates', static_folder='web/static')
 
 # 全局变量
 agent_dal = None

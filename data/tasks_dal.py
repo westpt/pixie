@@ -140,8 +140,8 @@ class TasksDAL(BaseDAL):
             params = (status, task_id)
         
         affected = self.execute_update(query, params)
-        
-        if affected > 0:
+
+        if affected == 0:
             logger.warning(f"更新任务状态失败：未找到task_id={task_id}的任务")
             return False
         
@@ -157,8 +157,8 @@ class TasksDAL(BaseDAL):
         """
         query = "UPDATE tasks SET agent_id = ? WHERE task_id = ?"
         affected = self.execute_update(query, (agent_id, task_id))
-        
-        if affected > 0:
+
+        if affected == 0:
             logger.warning(f"更新任务Agent失败：未找到task_id={task_id}的任务")
             return False
         

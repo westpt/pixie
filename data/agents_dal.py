@@ -145,8 +145,8 @@ class AgentsDAL(BaseDAL):
         now = datetime.now().isoformat()
         
         affected = self.execute_update(query, (status, now, agent_id))
-        
-        if affected > 0:
+
+        if affected == 0:
             logger.warning(f"更新Agent状态失败：未找到ID={agent_id}的Agent")
             return False
         
@@ -169,8 +169,8 @@ class AgentsDAL(BaseDAL):
         now = datetime.now().isoformat()
         
         affected = self.execute_update(query, (config_json, now, agent_id))
-        
-        if affected > 0:
+
+        if affected == 0:
             logger.warning(f"更新Agent配置失败：未找到ID={agent_id}的Agent")
             return False
         

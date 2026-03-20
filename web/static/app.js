@@ -7,9 +7,10 @@ let autoRefreshInterval = null;
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {
     initTabs();
+    initChatEvents();
     loadAgentStatus();
     loadStats();
-    
+
     // 默认显示对话标签
     switchTab('chat');
 });
@@ -79,14 +80,20 @@ function switchTab(tabName) {
 }
 
 // 对话功能
-document.getElementById('send-btn').addEventListener('click', sendMessage);
-document.getElementById('user-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-        sendMessage();
-    }
-});
+function initChatEvents() {
+    document.getElementById('send-btn').addEventListener('click', sendMessage);
+    document.getElementById('user-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            sendMessage();
+        }
+    });
 
-document.getElementById('clear-btn').addEventListener('click', clearConversation);
+    document.getElementById('clear-btn').addEventListener('click', clearConversation);
+
+    // 任务历史事件
+    document.getElementById('refresh-history').addEventListener('click', loadTaskHistory);
+    document.getElementById('filter-status').addEventListener('change', loadTaskHistory);
+}
 
 async function sendMessage() {
     const input = document.getElementById('user-input');
@@ -178,9 +185,6 @@ async function clearConversation() {
 }
 
 // 任务历史功能
-document.getElementById('refresh-history').addEventListener('click', loadTaskHistory);
-document.getElementById('filter-status').addEventListener('change', loadTaskHistory);
-
 async function loadTaskHistory() {
     const statusFilter = document.getElementById('filter-status').value;
     const tasksList = document.getElementById('tasks-list');
