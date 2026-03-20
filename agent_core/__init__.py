@@ -1,22 +1,13 @@
 """
 Agent核心模块
-包含Agent基础类和具体实现
+包含Agent基础类、状态枚举和相关工具
 """
 
-from agent_core.base_agent import (
-    BaseAgent,
-    AgentStatus,
-    TaskPriority,
-    TaskType
-)
-
-from agent_core.qa_agent import QAAssistant
+from .base_agent import BaseAgent, AgentState
+from .qa_agent import QAAssistant
 
 __all__ = [
     'BaseAgent',
-    'AgentStatus',
-    'TaskPriority',
-    'TaskType',
+    'AgentState',
     'QAAssistant',
 ]
-
